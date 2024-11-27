@@ -18,6 +18,8 @@
 
 #define U_NA &none
 
+// FOR SOME REASON THUMB KEY ROWS ARE BREAKING THE build.yml LOOK INTO BOTTOM ROW KEYS
+
 / {
         keymap {
                 compatible = "zmk,keymap";
@@ -27,7 +29,7 @@
         U_NA            &kp Q           &kp W           &kp F           &kp P           &kp B                           &kp J           &kp L           &kp U           &kp Y           &kp SQT         U_NA
         U_NA            &kp A           &mt LALT R      &mt LCTRL S     &mt LSHFT T     &kp G                           &kp M           &mt RSHFT N     &mt RCTRL E     &mt RALT I      &kp O           U_NA
         U_NA            &mt LGUI Z      &kp X           &kp C           &kp D           &kp V                           &kp K           &kp H           &kp COMMA       &kp PERIOD      &kp FSLH        U_NA
-                                                        &mo MEDIA ESC   &mo NAV TAB     &mo MOUSE SPACE                 &mo SYM RET     &mo NUM BSPC    &mo FUN DEL
+                                                        &kp SPACE       &mo NAV TAB     &mo MOUSE SPACE                 &mo SYM RET     &mo NUM BSPC    &mo FUN DEL
                         >;
                 };
         };
