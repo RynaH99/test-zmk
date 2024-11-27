@@ -12,44 +12,78 @@
         keymap {
                 compatible = "zmk,keymap";
 
-                default_layer {
-// -----------------------------------------------------------------------------------------
-// |  TAB |  Q  |  W  |  E  |  R  |  T  |   |  Y  |  U   |  I  |  O  |  P  | BSPC |
-// | CTRL |  A  |  S  |  D  |  F  |  G  |   |  H  |  J   |  K  |  L  |  ;  |  '   |
-// | SHFT |  Z  |  X  |  C  |  V  |  B  |   |  N  |  M   |  ,  |  .  |  /  | ESC  |
-//                    | GUI | LWR | SPC |   | ENT | RSE  | ALT |
+                base_layer {
                         bindings = <
-   &kp TAB   &kp Q &kp W &kp E &kp R &kp T   &kp Y &kp U  &kp I     &kp O   &kp P    &kp BSPC
-   &kp LCTRL &kp A &kp S &kp D &kp F &kp G   &kp H &kp J  &kp K     &kp L   &kp SEMI &kp SQT
-   &kp LSHFT &kp Z &kp X &kp C &kp V &kp B   &kp N &kp M  &kp COMMA &kp DOT &kp FSLH &kp ESC
-                  &kp LGUI &mo 1 &kp SPACE   &kp RET &mo 2 &kp RALT
+//      LRNA            LR1             LR2             LR3             LR4             LR5                             RR5             RR4             RR3             RR2             RR1             RRNA
+        U_NA            &kp Q           &kp W           &kp F           &kp P           &kp B                           &kp J           &kp L           &kp U           &kp Y           &kp SQT         U_NA
+        U_NA            &kp A           &mt LALT R      &mt LCTRL S     &mt LSHFT T     &kp G                           &kp M           &mt RSHFT N     &mt RCTRL E     &mt RALT I      &kp O           U_NA
+        U_NA            &mt LGUI Z      &kp X           &kp C           &kp D           &kp V                           &kp K           &kp H           &kp COMMA       &kp PERIOD      &kp FSLH        U_NA
+        U_NA            U_NA            U_NA            &mo MEDIA ESC   &mo NAV TAB     &mo MOUSE SPACE                 &mo SYM RET     &mo NUM BSPC    &mo FUN DEL     U_NA            U_NA            U_NA 
                         >;
                 };
-                lower_layer {
-// -----------------------------------------------------------------------------------------
-// |  TAB |  1  |  2  |  3  |  4  |  5  |   |  6  |  7  |  8  |  9  |  0  | BSPC |
-// | BTCLR| BT1 | BT2 | BT3 | BT4 | BT5 |   | LFT | DWN |  UP | RGT |     |      |
-// | SHFT |     |     |     |     |     |   |     |     |     |     |     |      |
-//                    | GUI |     | SPC |   | ENT |     | ALT |
+		media_layer {
                         bindings = <
-   &kp TAB    &kp N1       &kp N2       &kp N3       &kp N4       &kp N5         &kp N6   &kp N7   &kp N8 &kp N9    &kp N0 &kp BSPC
-   &bt BT_CLR &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4   &kp LEFT &kp DOWN &kp UP &kp RIGHT &trans &trans
-   &kp LSHFT  &trans       &trans       &trans       &trans       &trans         &trans   &trans   &trans &trans    &trans &trans
-                                    &kp LGUI     &trans       &kp SPACE      &kp RET  &trans   &kp RALT
+//      LRNA            LR1             LR2             LR3             LR4             LR5                             RR5             RR4             RR3             RR2             RR1             RRNA
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+        U_NA            U_NA            U_NA            U_NA            U_NA            U_NA                            U_NA            U_NA            U_NA            U_NA            U_NA            U_NA
+        U_NA            &kp LGUI        &kp LALT        &kp LCTRL       &kp LSHFT       U_NA                            &kp C_VOLUME_UP &kp C_VOLUME_DOWN &kp C_PREV    &kp C_NEXT      U_NA            U_NA
+        U_NA            U_NA            U_NA            U_NA            U_NA            U_NA                            &bt BT_CLR_ALL  &bt BT_SEL 0    &bt BT_SEL 1    &bt BT_SEL 2    &bt BT_SEL 3    U_NA
+        U_NA            U_NA            U_NA            U_NA            U_NA            U_NA                            &kp C_PAUSE     &kp C_PLAY_PAUSE &kp C_MUTE     U_NA            U_NA            U_NA                                                
                         >;
                 };
 
-                raise_layer {
-// -----------------------------------------------------------------------------------------
-// |  TAB |  !  |  @  |  #  |  $  |  %  |   |  ^  |  &  |  *  |  (  |  )  | BSPC |
-// | CTRL |     |     |     |     |     |   |  -  |  =  |  [  |  ]  |  \  |  `   |
-// | SHFT |     |     |     |     |     |   |  _  |  +  |  {  |  }  | "|" |  ~   |
-//                    | GUI |     | SPC |   | ENT |     | ALT |
+                nav_layer {
                         bindings = <
-   &kp  TAB  &kp EXCL &kp AT &kp HASH &kp DLLR &kp PRCNT   &kp CARET &kp AMPS  &kp ASTRK &kp LPAR &kp RPAR &kp BSPC
-   &kp LCTRL &trans   &trans &trans   &trans   &trans      &kp MINUS &kp EQUAL &kp LBKT  &kp RBKT &kp BSLH &kp GRAVE
-   &kp LSHFT &trans   &trans &trans   &trans   &trans      &kp UNDER &kp PLUS  &kp LBRC  &kp RBRC &kp PIPE &kp TILDE
-                             &kp LGUI &trans   &kp SPACE   &kp RET   &trans    &kp RALT
+//      LRNA            LR1             LR2             LR3             LR4             LR5                             RR5             RR4             RR3             RR2             RR1             RRNA
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+        U_NA            U_NA            U_NA            U_NA            U_NA            U_NA                            &kp LC(Z)       &kp LC(V)       &kp LC(C)       &kp LC(X)       &kp LC(Y)       U_NA
+        U_NA            &kp LGUI        &kp LALT        &kp LCTRL       &kp LSHFT       U_NA                            &kp CAPS        &kp LEFT        &kp DOWN        &kp UP          &kp RIGHT       U_NA
+        U_NA            U_NA            U_NA            U_NA            U_NA            U_NA                            &kp INS         &kp HOME        &kp PG_UP       &kp PG_DN       &kp END         U_NA
+        U_NA            U_NA            U_NA            U_NA            U_NA            U_NA                            &kp RET         &kp BSPC        &kp DEL         U_NA            U_NA            U_NA
+                        >;
+                };
+
+                mouse_layer {
+                        bindings = <
+//      LRNA            LR1             LR2             LR3             LR4             LR5                             RR5             RR4             RR3             RR2             RR1             RRNA
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+        U_NA            U_NA            U_NA            U_NA            U_NA            U_NA                            &kp LC(Z)       &kp LC(V)       &kp LC(C)       &kp LC(X)       &kp LC(Y)       U_NA
+        U_NA            &kp LGUI        &kp LALT        &kp LCTRL       &kp LSHFT       U_NA                            &mkp MB4        &kp LEFT        &kp DOWN        &kp UP          &kp RIGHT       U_NA
+        U_NA            U_NA            U_NA            U_NA            U_NA            U_NA                            &mkp MB5        U_NA            U_NA            U_NA            U_NA            U_NA
+        U_NA            U_NA            U_NA            U_NA            U_NA            U_NA                            &mkp LCLK       &mkp MCLK       &mkp RCLK       U_NA            U_NA            U_NA
+                        >;
+                };
+
+                symbol_layer {
+                        bindings = <
+//      LRNA            LR1             LR2             LR3             LR4             LR5                             RR5             RR4             RR3             RR2             RR1             RRNA
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+        U_NA            &kp LBRC        &kp AMPS        &kp STAR        &kp LBKT        &kp RBKT                        U_NA            U_NA            U_NA            U_NA            U_NA            U_NA
+        U_NA            &kp COLON       &kp DLLR        &kp PRCNT       &kp MINUS       &kp EQUAL                       U_NA            &kp RSHFT       &kp RCTRL       &kp RALT        &kp LGUI        U_NA
+        U_NA            &kp TILDE       &kp EXCL        &kp AT          &kp HASH        &kp PIPE                        U_NA            U_NA            U_NA            U_NA            U_NA            U_NA
+        U_NA            U_NA            U_NA            &kp LPAR        &kp RPAR        &kp UNDER                       U_NA            U_NA            U_NA            U_NA            U_NA            U_NA
+                        >;
+                };
+
+                num_layer {
+                        bindings = <
+//      LRNA            LR1             LR2             LR3             LR4             LR5                             RR5             RR4             RR3             RR2             RR1             RRNA
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+        U_NA            &kp LBRC        &kp N7          &kp N8          &kp N9          &kp RBKT                        U_NA            U_NA            U_NA            U_NA            U_NA            U_NA
+        U_NA            &kp SEMI        &kp N4          &kp N5          &kp N6          &kp EQUAL                       U_NA            &kp RSHFT       &kp RCTRL       &kp RALT        &kp LGUI        U_NA
+        U_NA            &kp GRAVE       &kp N1          &kp N2          &kp N3          &kp NUBS                        U_NA            U_NA            U_NA            U_NA            U_NA            U_NA
+        U_NA            U_NA            U_NA            &kp DOT         &kp N0          &kp MINUS                       U_NA            U_NA            U_NA            U_NA            U_NA            U_NA
+                        >;
+                };
+
+                function_layer { 
+                        bindings = <
+//      LRNA            LR1             LR2             LR3             LR4             LR5                             RR5             RR4             RR3             RR2             RR1             RRNA
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+        U_NA            &kp F12         &kp F7          &kp F8          &kp F9          &kp PSCRN                       U_NA            U_NA            U_NA            U_NA            U_NA            U_NA
+        U_NA            &kp F11         &kp F4          &kp F5          &kp F6          &kp SLCK                        U_NA            &kp RSHFT       &kp RCTRL       &kp RALT        &kp LGUI        U_NA
+        U_NA            &kp F10         &kp F1          &kp F2          &kp F3          &kp PAUSE_BREAK                 U_NA            U_NA            U_NA            U_NA            U_NA            U_NA
+        U_NA            U_NA            U_NA            &kp DOT         &kp TAB         &kp SPACE                       U_NA            U_NA            U_NA            U_NA            U_NA            U_NA
                         >;
                 };
         };
