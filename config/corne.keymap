@@ -29,7 +29,7 @@
         U_NA            &kp Q           &kp W           &kp F           &kp P           &kp B                           &kp J           &kp L           &kp U           &kp Y           &kp SQT         U_NA
         U_NA            &kp A           &mt LALT R      &mt LCTRL S     &mt LSHFT T     &kp G                           &kp M           &mt RSHFT N     &mt RCTRL E     &mt RALT I      &kp O           U_NA
         U_NA            &mt LGUI Z      &kp X           &kp C           &kp D           &kp V                           &kp K           &kp H           &kp COMMA       &kp PERIOD      &kp FSLH        U_NA
-                                                        &kp LGUI        &mo 1           &kp SPACE                       &kp RET         &mo 2           &kp RALT                        
+                                                        &mt MEDIA ESC   &mt NAV TAB     &mt MOUSE SPACE                 &mt SYM RET     &mt NUM BSPC    &mt FUN DEL          
                         >;
                 };
         };
